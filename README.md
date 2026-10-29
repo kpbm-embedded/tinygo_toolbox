@@ -114,8 +114,8 @@ Templates (`./tinygo-box new <kind> <name> [--dir D]`); each new one has a `chec
 | `rust_ffi` | TinyGo + no_std Rust (saturating PI controller) through cgo | rustc --emit obj + run on riscv-qemu |
 
 **Rust, Zig, Bend:** Rust and Zig get examples and templates through the C ABI (cgo objects, above); TinyGo
-itself compiles only Go and C. Bend: not supported; Bend's C output needs its own heap and threads (host
-programs), and TinyGo links C only through cgo on an MCU, so there is no real fit here.
+itself compiles only Go and C. Bend: not supported; Bend has no MCU target and its C output is a host program
+(own heap, threads), while this tool exists to put Go on microcontrollers, so there is no real fit here.
 
 ## Configuration and environment variables
 
