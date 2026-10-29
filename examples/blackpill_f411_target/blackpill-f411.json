@@ -1,0 +1,5 @@
+{
+  "inherits": ["stm32f4disco"],
+  "build-tags": ["blackpill_f411"],
+  "linkerscript": "blackpill-f411.ld"
+}

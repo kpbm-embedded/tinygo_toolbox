@@ -1,0 +1,17 @@
+# tinygo-box: only sources go into git. Everything below is downloaded or produced again by
+# ./tinygo-box bootstrap | install | examples test (pins: config/pins.tsv, pixi sha256 in tinygo-box).
+/.bin/
+/.pixi/
+/cache
+/install/
+/native/
+/build/
+/log/
+/config/local.env
+/config/go.env
+*.tar.zst
+*.tar.gz
+__pycache__/
+# template checks and zig run inside a project folder
+.zig-cache/
+zig-out/

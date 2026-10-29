@@ -1,0 +1,32 @@
+id = "32_23"
+name = "tinygo"
+kind = "tool"
+status = "active"
+tags = ["embedded"]
+
+[backup]
+tier = "critical"
+
+[tool]
+name = "tinygo"
+launcher = "tinygo-box"
+aliases = ["tinygo-box"]
+env_var = "BOX_TINYGO"
+env_path = "."
+native = "native/native.zsh"
+native_provides = ["tinygo", "tinygo-go"]
+native_off_compat = ["TINYGO_BOX_NATIVE_OFF"]
+network = ["bootstrap", "install", "update"]
+
+[scripts.tinygo-box]
+schema = 1
+kind = "launcher"
+path = "tinygo-box"
+summary = "self-contained TinyGo + Go (pinned release tarballs, sha256) for microcontrollers."
+interpreter = "sh"
+commands = ["help", "where", "bootstrap", "install", "update", "clean", "status", "doctor", "shell", "run", "test", "new", "examples", "native", "relocate", "pack", "tinygo", "go", "targets", "plan"]
+flags = ["--all", "--check", "--dir", "--dry-run", "--env", "--force", "--help", "--no-demos", "--out", "--print", "--with-cache", "--yes"]
+reads = { global = ["BOXT_DRY_RUN"] }
+dry_run_flag = "--dry-run"
+apply_flag = { clean = "--yes" }
+scope = "global"
